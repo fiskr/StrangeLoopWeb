@@ -1,75 +1,26 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
   <head>
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<title>Strange Loop, LLC</title>
-		<link rel="stylesheet" type="text/css" href="css/markdown.css"></link>
+		<link rel="stylesheet" type="text/css" href="css/markdown.css"/>
 	</head>
 	<body>
 		<h1>Strange Loop</h1>
 
 		<div class="nav-bar">
-			<div class="content-link" data-content-link="2016/04/07/some.html">Greetings</div>
-			<div class="content-link" data-content-link="2016/04/07/another.html">About</div>
+      <div class="content-link" data-content-link="html/greetings.html" id="initial-tab">Greetings</div>
+			<div class="content-link" data-content-link="html/contact.html">Contact</div>
+			<div class="content-link" data-content-link="html/about.html">About</div>
 		</div>
-		<div id="text-dropzone">Default Text</div>
+		<div id="text-dropzone"></div>
 
-		<script>
-
-			function addEventListeners(selector, callback){
-	
-				var elems = document.querySelectorAll(selector);
-				for(var i = 0; i < elems.length; i++){
-						elems[ i ].addEventListener( 'click', callback, false );
-				}
-
-			}
-			
-			function reqListener () {
-				console.log(this.responseText);
-				document.getElementById('text-dropzone').innerHTML = this.responseText;
-			}
-
-
-			addEventListeners('.content-link', function(event){
-				event.preventDefault();
-			
-				var links = document.getElementsByClassName('content-link')
-
-				for(var i = 0; i < links.length; i++){
-					links[i].className = 'content-link';	
-				}
-
-				event.target.className += ' active';
-
-				var oReq = new XMLHttpRequest();
-				oReq.addEventListener("load", reqListener);
-				console.log(window.location.toString().replace(/([^/]\/)[^/]+$/, '$1') + event.target.getAttribute('data-content-link'));
-				oReq.open("GET", window.location.toString().replace(/([^/]\/)[^/]+$/, '$1') + event.target.getAttribute('data-content-link'));
-				oReq.send();	
-			});
-
-			console.log('... event listener made?');
-		</script>
-		<style>
-			.nav-bar { padding-bottom: 1rem; }
-			.nav-bar .content-link { 
-				padding-bottom: 0.5rem; 
-				margin-right: 7px;		
-				font-size: 14px; 
-				display: inline-block; 
-			}
-			.nav-bar .content-link:hover { 
-				border-bottom: 2px solid; 
-				border-color: #e2e2e2; 
-				color: #6f6f6f;
-			}
-			.nav-bar .content-link.active { 
-				border-bottom: 2px solid; 
-				border-color: #323232; 
-				color: #323232;
-			}
-		</style>
+		<script src="js/main.js"/>
+    <script type="text/javascript">
+      document.getElementById('initial-tab').click();
+    </script>
+    
+		<link rel="stylesheet" type="text/css" href="css/tabbed-article.css"/>
   </body>
 </html>
