@@ -40,4 +40,13 @@ addEventListeners('.content-link', function(event){
 	oReq.send();
 });
 
+var initialTab = document.getElementById('initial-tab'),
+		eventObject = document.createEvent('Events');
+
+console.log('what\'s up ?');
+
+eventObject.initEvent('click', true, false);
+initialTab.dispatchEvent(eventObject);
+console.log(initialTab, eventObject);
+
 console.log('... event listener made?');
