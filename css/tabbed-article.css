@@ -1,17 +1,24 @@
-.nav-bar { padding-bottom: 1rem; }
-.nav-bar .content-link { 
-	padding-bottom: 0.5rem; 
-	margin-right: 7px;    
-	font-size: 14px; 
-	display: inline-block; 
+.nav-bar {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
+.nav-bar .content-link {
+	padding-bottom: 0.5rem;
+	margin-right: 14px;
+	font-size: 21px;
+	display: inline-block;
 	border-bottom: 2px solid;
 	border-color: #FFF;
-}   
-.nav-bar .content-link:hover { 
-	border-color: #e2e2e2; 
+}
+.nav-bar .content-link:hover {
+	border-color: #e2e2e2;
 	color: #6f6f6f;
-}   
-.nav-bar .content-link.active { 
-	border-color: #323232; 
+}
+.nav-bar .content-link.active {
+	border-color: #323232;
 	color: #323232;
-}  
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+}
